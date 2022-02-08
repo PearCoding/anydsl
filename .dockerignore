@@ -1,0 +1,12 @@
+config.sh
+half/
+llvm-project/
+llvm_build/
+llvm_install/
+project.sh
+rodent/
+stincilla/
+*/build/.git
+*/build/src
+*/build/CMakeFiles
+*/build/CMakeCache.txt
