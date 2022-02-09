@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -y cmake ninja-build && rm -rf /var/lib/ap
 RUN mkdir -p /anydsl
 COPY . /anydsl
 WORKDIR /anydsl
-RUN cp docker/config-avx2-jit.sh.template config.sh && chmod +x setup.sh && chmod +x docker/cleanup.sh
+RUN cp docker/config-jit.sh.template config.sh && chmod +x setup.sh && chmod +x docker/cleanup.sh
 RUN ./setup.sh && ./docker/cleanup.sh
 
