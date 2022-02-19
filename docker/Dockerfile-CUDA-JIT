@@ -5,13 +5,12 @@ LABEL maintainer="Ömercan Yazici" \
       version="0.1.0"
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda
-ENV CUDA_LIBRARY /usr/local/cuda-11.6/compat/libcuda.so
-
-RUN apt-get update && apt-get install -y build-essential g++ git subversion zlib1g-dev cmake ninja-build && rm -rf /var/lib/apt/lists/* 
+ENV CUDAToolkit_LIBRARY_ROOT /usr/local/cuda
 
 RUN mkdir -p /anydsl
 COPY . /anydsl
 WORKDIR /anydsl
+
+RUN apt-get update && /anydsl/docker/setup_newest_cmake.sh && apt-get install -y build-essential g++ git subversion zlib1g-dev cmake ninja-build && rm -rf /var/lib/apt/lists/* 
 RUN cp docker/config-jit.sh.template config.sh && chmod +x setup.sh && chmod +x docker/cleanup.sh
 RUN ./setup.sh && ./docker/cleanup.sh
