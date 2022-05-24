@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.7.0-devel-ubuntu22.04
 
 LABEL maintainer="Ömercan Yazici" \
       description="Anydsl Meta package for AVX2 and with GPU CUDA support" \

@@ -1,4 +1,4 @@
-FROM gcc:11
+FROM gcc:12
 
 LABEL maintainer="Ömercan Yazici" \
       description="Anydsl Meta package for AVX2 without GPU support" \
